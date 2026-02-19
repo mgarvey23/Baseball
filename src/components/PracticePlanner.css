@@ -1,5 +1,5 @@
 /* ===========================
-   Practice Planner
+   Practice Planner — Dodgers Theme
    =========================== */
 
 .planner-page {
@@ -12,13 +12,15 @@
 
 .planner-header h2 {
   font-size: 1.6rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  font-weight: 900;
+  color: #002D72;
   margin: 0 0 0.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .planner-header p {
-  color: #666;
+  color: #5a6a8a;
   font-size: 0.88rem;
   margin: 0;
 }
@@ -31,7 +33,8 @@
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,45,114,0.06);
+  border-top: 4px solid #002D72;
 }
 
 .setting-group {
@@ -43,26 +46,27 @@
 }
 
 .setting-group label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #999;
+  letter-spacing: 0.1em;
+  color: #a5acaf;
 }
 
 .setting-input {
-  border: 1.5px solid #ddd;
+  border: 1.5px solid #cdd5e0;
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
-  font-weight: 600;
-  color: #1a1a2e;
+  font-weight: 700;
+  color: #002D72;
   outline: none;
   transition: border-color 0.15s;
 }
 
 .setting-input:focus {
-  border-color: #1a3a6e;
+  border-color: #005A9C;
+  box-shadow: 0 0 0 3px rgba(0,90,156,0.12);
 }
 
 .duration-select {
@@ -71,25 +75,25 @@
 }
 
 .dur-btn {
-  padding: 0.4rem 0.65rem;
+  padding: 0.4rem 0.7rem;
   border-radius: 8px;
-  border: 1.5px solid #ddd;
+  border: 1.5px solid #cdd5e0;
   background: #fff;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #555;
+  color: #4a5a75;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.14s;
 }
 
 .dur-btn:hover {
-  border-color: #1a3a6e;
-  color: #1a3a6e;
+  border-color: #005A9C;
+  color: #005A9C;
 }
 
 .dur-btn.active {
-  background: #1a3a6e;
-  border-color: #1a3a6e;
+  background: #002D72;
+  border-color: #002D72;
   color: #fff;
 }
 
@@ -105,16 +109,14 @@
   justify-content: space-between;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #666;
+  color: #5a6a8a;
 }
 
-.time-bar-labels .over-time {
-  color: #e74c3c;
-}
+.time-bar-labels .over-time { color: #EF3E42; }
 
 .time-bar-track {
   height: 10px;
-  background: #eee;
+  background: #e2e8f0;
   border-radius: 99px;
   overflow: hidden;
 }
@@ -125,16 +127,16 @@
   transition: width 0.3s ease;
 }
 
-.time-bar-fill.ok   { background: #27ae60; }
-.time-bar-fill.warn { background: #f39c12; }
-.time-bar-fill.over { background: #e74c3c; }
+.time-bar-fill.ok   { background: #005A9C; }
+.time-bar-fill.warn { background: #C4A44A; }
+.time-bar-fill.over { background: #EF3E42; }
 
 /* Drill list */
 .session-drills {
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,45,114,0.06);
   min-height: 80px;
 }
 
@@ -146,12 +148,10 @@
   padding: 2rem;
   gap: 0.5rem;
   text-align: center;
-  color: #aaa;
+  color: #a5acaf;
 }
 
-.empty-icon {
-  font-size: 2rem;
-}
+.empty-icon { font-size: 2rem; }
 
 .session-empty p {
   font-size: 0.88rem;
@@ -163,36 +163,28 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.85rem 1.1rem;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f2f5f9;
   transition: background 0.1s;
 }
 
-.session-drill-row:last-child {
-  border-bottom: none;
-}
-
-.session-drill-row:hover {
-  background: #fafafa;
-}
+.session-drill-row:last-child { border-bottom: none; }
+.session-drill-row:hover { background: #f8fafc; }
 
 .session-drill-num {
   width: 24px;
   height: 24px;
-  background: #f0f4ff;
+  background: #eef3fb;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.72rem;
-  font-weight: 800;
-  color: #1a3a6e;
+  font-weight: 900;
+  color: #005A9C;
   flex-shrink: 0;
 }
 
-.session-drill-icon {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
+.session-drill-icon { font-size: 1.2rem; flex-shrink: 0; }
 
 .session-drill-info {
   flex: 1;
@@ -202,7 +194,7 @@
 .session-drill-name {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #002D72;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,7 +202,7 @@
 
 .session-drill-meta {
   font-size: 0.75rem;
-  color: #999;
+  color: #8a9ab5;
   margin-top: 1px;
 }
 
@@ -224,32 +216,29 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  border: 1px solid #eee;
-  background: #f8f8f8;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
   font-size: 0.8rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.12s;
-  color: #555;
+  color: #4a5a75;
 }
 
 .row-btn:hover:not(:disabled) {
-  background: #e8edf5;
-  border-color: #1a3a6e;
-  color: #1a3a6e;
+  background: #eef3fb;
+  border-color: #005A9C;
+  color: #005A9C;
 }
 
-.row-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
+.row-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
 .row-btn.remove:hover {
   background: #fde8e8;
-  border-color: #e74c3c;
-  color: #e74c3c;
+  border-color: #EF3E42;
+  color: #EF3E42;
 }
 
 /* Action buttons */
@@ -261,66 +250,60 @@
 
 .btn-add-drill {
   padding: 0.65rem 1.25rem;
-  background: #1a3a6e;
+  background: #002D72;
   color: #fff;
   border: none;
   border-radius: 10px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.14s;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.btn-add-drill:hover {
-  background: #142d58;
-}
+.btn-add-drill:hover { background: #001a4d; }
 
 .btn-save {
   padding: 0.65rem 1.25rem;
-  background: #27ae60;
+  background: #005A9C;
   color: #fff;
   border: none;
   border-radius: 10px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.14s;
 }
 
-.btn-save:hover {
-  background: #1e8449;
-}
+.btn-save:hover { background: #004a85; }
 
 .btn-clear {
   padding: 0.65rem 1rem;
   background: #fff;
-  color: #e74c3c;
-  border: 1.5px solid #e74c3c;
+  color: #EF3E42;
+  border: 1.5px solid #EF3E42;
   border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
 }
 
-/* Research tip */
+/* Research tip — Dodger blue */
 .planner-tip {
-  background: #f0f4ff;
+  background: #eef3fb;
   border-radius: 12px;
   padding: 0.85rem 1rem;
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
   font-size: 0.82rem;
-  color: #444;
+  color: #2a3f6e;
   line-height: 1.55;
-  border-left: 3px solid #1a3a6e;
+  border-left: 3px solid #005A9C;
 }
 
-.tip-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
+.tip-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
 
 /* ===========================
    Modal
@@ -329,7 +312,7 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,8 +329,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.22);
   animation: slideUp 0.2s ease;
+  border-top: 4px solid #002D72;
 }
 
 .modal-header {
@@ -359,13 +343,16 @@
 }
 
 .modal-header h3 {
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: 1.05rem;
+  font-weight: 900;
   margin: 0;
+  color: #002D72;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .modal-close {
-  background: #f0f0f0;
+  background: #f0f3f8;
   border: none;
   border-radius: 50%;
   width: 30px;
@@ -375,6 +362,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #555;
 }
 
 .modal-filters {
@@ -412,76 +400,29 @@
 }
 
 .modal-drill-row:not(.already):hover {
-  background: #f0f4ff;
-  border-color: #1a3a6e;
+  background: #eef3fb;
+  border-color: #005A9C;
 }
 
-.modal-drill-row.already {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
+.modal-drill-row.already { opacity: 0.45; cursor: not-allowed; }
 
-.mdrill-icon {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
+.mdrill-icon { font-size: 1.2rem; flex-shrink: 0; }
 
-.mdrill-info {
-  flex: 1;
-  min-width: 0;
-}
+.mdrill-info { flex: 1; min-width: 0; }
 
-.mdrill-name {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #1a1a2e;
-}
+.mdrill-name { font-size: 0.9rem; font-weight: 700; color: #002D72; }
 
-.mdrill-meta {
-  font-size: 0.75rem;
-  color: #999;
-}
+.mdrill-meta { font-size: 0.75rem; color: #8a9ab5; }
 
-.mdrill-add {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a3a6e;
-}
+.mdrill-add { font-size: 1.3rem; font-weight: 800; color: #005A9C; }
 
 .mdrill-added {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #999;
+  color: #aaa;
   background: #f0f0f0;
   border-radius: 20px;
   padding: 0.2rem 0.55rem;
-}
-
-.cat-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: 20px;
-  border: 1.5px solid #ddd;
-  background: #fff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #555;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-
-.cat-btn:hover {
-  border-color: #1a3a6e;
-  color: #1a3a6e;
-}
-
-.cat-btn.active {
-  background: #1a3a6e;
-  border-color: #1a3a6e;
-  color: #fff;
 }
 
 @keyframes slideUp {

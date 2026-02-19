@@ -1,5 +1,5 @@
 /* ===========================
-   Arm Health Page
+   Arm Health — Dodgers Theme
    =========================== */
 
 .arm-page {
@@ -11,13 +11,15 @@
 
 .arm-header h2 {
   font-size: 1.6rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  font-weight: 900;
+  color: #002D72;
   margin: 0 0 0.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .arm-header p {
-  color: #666;
+  color: #5a6a8a;
   font-size: 0.88rem;
   margin: 0;
 }
@@ -26,7 +28,7 @@
 .arm-tabs {
   display: flex;
   gap: 0.4rem;
-  background: #e8edf5;
+  background: #e2e8f0;
   border-radius: 12px;
   padding: 4px;
 }
@@ -37,17 +39,19 @@
   border: none;
   border-radius: 9px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   background: transparent;
-  color: #666;
+  color: #5a6a8a;
   transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .arm-tab.active {
   background: #fff;
-  color: #1a1a2e;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  color: #002D72;
+  box-shadow: 0 1px 6px rgba(0,45,114,0.14);
 }
 
 /* ===========================
@@ -65,10 +69,11 @@
   background: #fff;
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0,45,114,0.08);
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border-top: 4px solid #002D72;
 }
 
 .gauge-label-row {
@@ -78,16 +83,16 @@
 }
 
 .gauge-title {
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #999;
+  letter-spacing: 0.1em;
+  color: #a5acaf;
 }
 
 .gauge-date {
-  font-size: 0.78rem;
-  color: #bbb;
+  font-size: 0.76rem;
+  color: #c0c8d8;
 }
 
 .gauge-number {
@@ -99,13 +104,13 @@
 
 .gauge-max {
   font-size: 1.4rem;
-  opacity: 0.4;
+  opacity: 0.35;
   font-weight: 600;
 }
 
 .gauge-bar-track {
   height: 14px;
-  background: #f0f0f0;
+  background: #e2e8f0;
   border-radius: 99px;
   overflow: hidden;
 }
@@ -120,8 +125,8 @@
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
 }
 
 /* Rest status */
@@ -129,27 +134,26 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: #fafafa;
+  background: #f8fafc;
   border-radius: 12px;
   padding: 0.85rem 1rem;
   border: 2px solid;
   transition: border-color 0.3s;
 }
 
-.rest-status-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
+.rest-status-icon { font-size: 1.5rem; flex-shrink: 0; }
 
 .rest-status-label {
   font-size: 0.92rem;
-  font-weight: 700;
+  font-weight: 800;
   transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .rest-status-sub {
   font-size: 0.78rem;
-  color: #666;
+  color: #5a6a8a;
   margin-top: 2px;
 }
 
@@ -168,23 +172,23 @@
 .inc-btn {
   padding: 0.4rem 0.75rem;
   border-radius: 8px;
-  border: 1.5px solid #ddd;
+  border: 1.5px solid #cdd5e0;
   background: #fff;
   font-size: 0.82rem;
   font-weight: 700;
-  color: #555;
+  color: #4a5a75;
   cursor: pointer;
   transition: all 0.12s;
 }
 
 .inc-btn:hover {
-  border-color: #1a3a6e;
-  color: #1a3a6e;
+  border-color: #005A9C;
+  color: #005A9C;
 }
 
 .inc-btn.active {
-  background: #1a3a6e;
-  border-color: #1a3a6e;
+  background: #002D72;
+  border-color: #002D72;
   color: #fff;
 }
 
@@ -196,30 +200,30 @@
 .btn-log-pitch {
   flex: 1;
   padding: 0.7rem 1rem;
-  background: #1a3a6e;
+  background: #002D72;
   color: #fff;
   border: none;
   border-radius: 10px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.14s;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.btn-log-pitch:hover:not(:disabled) {
-  background: #142d58;
-}
+.btn-log-pitch:hover:not(:disabled) { background: #001a4d; }
 
 .btn-log-pitch:disabled {
-  background: #ccc;
+  background: #cdd5e0;
   cursor: not-allowed;
 }
 
 .btn-reset {
   padding: 0.7rem 1rem;
   background: #fff;
-  color: #e74c3c;
-  border: 1.5px solid #e74c3c;
+  color: #EF3E42;
+  border: 1.5px solid #EF3E42;
   border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 700;
@@ -231,15 +235,16 @@
   background: #fff;
   border-radius: 14px;
   padding: 1.1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,45,114,0.06);
 }
 
 .pitch-history h4 {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #999;
+  letter-spacing: 0.1em;
+  color: #a5acaf;
   margin: 0 0 0.75rem 0;
+  font-weight: 700;
 }
 
 .history-row {
@@ -249,16 +254,12 @@
   margin-bottom: 0.5rem;
 }
 
-.history-date {
-  font-size: 0.78rem;
-  color: #888;
-  min-width: 80px;
-}
+.history-date { font-size: 0.76rem; color: #8a9ab5; min-width: 80px; }
 
 .history-bar-track {
   flex: 1;
   height: 8px;
-  background: #f0f0f0;
+  background: #e2e8f0;
   border-radius: 99px;
   overflow: hidden;
 }
@@ -271,23 +272,23 @@
 
 .history-count {
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 800;
   min-width: 24px;
   text-align: right;
 }
 
 /* Pitch rule note */
 .pitch-rule-note {
-  background: #f0f4ff;
+  background: #eef3fb;
   border-radius: 12px;
   padding: 0.85rem 1rem;
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
   font-size: 0.82rem;
-  color: #444;
+  color: #2a3f6e;
   line-height: 1.55;
-  border-left: 3px solid #1a3a6e;
+  border-left: 3px solid #005A9C;
 }
 
 /* ===========================
@@ -308,24 +309,24 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,45,114,0.06);
+  border-top: 4px solid #002D72;
 }
 
-.strength-intro-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
+.strength-intro-icon { font-size: 2rem; flex-shrink: 0; }
 
 .strength-intro h3 {
   font-size: 1rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  font-weight: 900;
+  color: #002D72;
   margin: 0 0 0.35rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .strength-intro p {
   font-size: 0.85rem;
-  color: #555;
+  color: #5a6a8a;
   line-height: 1.6;
   margin: 0;
 }
@@ -335,13 +336,13 @@
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  border: 1.5px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.05);
+  border: 1.5px solid #e2e8f0;
   transition: border-color 0.15s;
 }
 
 .phase-card.open {
-  border-color: #1a3a6e;
+  border-color: #005A9C;
 }
 
 .phase-header {
@@ -357,44 +358,38 @@
   transition: background 0.12s;
 }
 
-.phase-header:hover {
-  background: #fafafa;
-}
+.phase-header:hover { background: #f8fafc; }
 
 .phase-tag {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #1a3a6e;
-  background: #e8f0ff;
+  color: #005A9C;
+  background: #eef3fb;
   border-radius: 20px;
-  padding: 0.15rem 0.55rem;
+  padding: 0.15rem 0.6rem;
   display: inline-block;
   margin-bottom: 0.3rem;
 }
 
 .phase-title {
   font-size: 1rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  font-weight: 900;
+  color: #002D72;
 }
 
 .phase-subtitle {
-  font-size: 0.78rem;
-  color: #999;
+  font-size: 0.76rem;
+  color: #8a9ab5;
   margin-top: 1px;
 }
 
-.phase-chevron {
-  font-size: 0.7rem;
-  color: #aaa;
-  flex-shrink: 0;
-}
+.phase-chevron { font-size: 0.68rem; color: #a5acaf; flex-shrink: 0; }
 
 .phase-body {
   padding: 0 1.25rem 1.25rem;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f4f8;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -402,7 +397,7 @@
 
 .phase-desc {
   font-size: 0.88rem;
-  color: #555;
+  color: #5a6a8a;
   line-height: 1.6;
   margin: 0.75rem 0 0;
 }
@@ -414,12 +409,12 @@
 }
 
 .phase-meta-chip {
-  font-size: 0.78rem;
-  background: #f0f4ff;
-  color: #1a3a6e;
+  font-size: 0.76rem;
+  background: #eef3fb;
+  color: #005A9C;
   border-radius: 8px;
   padding: 0.3rem 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Exercises */
@@ -433,28 +428,28 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  background: #fafafa;
+  background: #f8fafc;
   border-radius: 10px;
   padding: 0.85rem;
-  border: 1.5px solid #eee;
+  border: 1.5px solid #e2e8f0;
   transition: all 0.15s;
 }
 
 .exercise-card.done {
-  background: #f0faf4;
-  border-color: #a8e6c0;
-  opacity: 0.7;
+  background: #eef8f3;
+  border-color: #a8d8bb;
+  opacity: 0.75;
 }
 
 .exercise-check {
   width: 24px;
   height: 24px;
   border-radius: 6px;
-  border: 2px solid #ddd;
+  border: 2px solid #cdd5e0;
   background: #fff;
   font-size: 0.8rem;
-  font-weight: 700;
-  color: #27ae60;
+  font-weight: 800;
+  color: #005A9C;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -465,46 +460,40 @@
 }
 
 .exercise-card.done .exercise-check {
-  background: #27ae60;
-  border-color: #27ae60;
+  background: #005A9C;
+  border-color: #005A9C;
   color: #fff;
 }
 
-.exercise-icon {
-  font-size: 1.3rem;
-  flex-shrink: 0;
-}
+.exercise-icon { font-size: 1.3rem; flex-shrink: 0; }
 
-.exercise-info {
-  flex: 1;
-  min-width: 0;
-}
+.exercise-info { flex: 1; min-width: 0; }
 
 .exercise-name {
   font-size: 0.9rem;
-  font-weight: 700;
-  color: #1a1a2e;
+  font-weight: 800;
+  color: #002D72;
   margin-bottom: 2px;
 }
 
 .exercise-sets {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #1a3a6e;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #005A9C;
   margin-bottom: 0.35rem;
 }
 
 .exercise-cue {
   font-size: 0.82rem;
-  color: #555;
+  color: #4a5a75;
   font-style: italic;
   line-height: 1.5;
   margin-bottom: 0.3rem;
 }
 
 .exercise-purpose {
-  font-size: 0.75rem;
-  color: #999;
+  font-size: 0.74rem;
+  color: #a5acaf;
   line-height: 1.4;
 }
 
@@ -512,16 +501,16 @@
   align-self: flex-start;
   background: none;
   border: none;
-  color: #aaa;
-  font-size: 0.78rem;
+  color: #a5acaf;
+  font-size: 0.76rem;
   cursor: pointer;
   text-decoration: underline;
   padding: 0;
 }
 
-/* Strength warning */
+/* Strength warning — gold */
 .strength-warning {
-  background: #fff8e1;
+  background: linear-gradient(135deg, #fdf6e3, #f7e9b8);
   border-radius: 12px;
   padding: 0.9rem 1rem;
   display: flex;
@@ -530,7 +519,7 @@
   font-size: 0.82rem;
   color: #444;
   line-height: 1.55;
-  border-left: 4px solid #f39c12;
+  border-left: 4px solid #C4A44A;
 }
 
 /* ===========================
@@ -546,14 +535,16 @@
 
 .recovery-intro h3 {
   font-size: 1.1rem;
-  font-weight: 800;
-  color: #1a1a2e;
+  font-weight: 900;
+  color: #002D72;
   margin: 0 0 0.35rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .recovery-intro p {
   font-size: 0.88rem;
-  color: #555;
+  color: #5a6a8a;
   line-height: 1.6;
   margin: 0;
 }
@@ -570,24 +561,25 @@
   align-items: center;
   gap: 0.85rem;
   background: #fff;
-  border: 1.5px solid #eee;
+  border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.85rem 1rem;
   cursor: pointer;
   text-align: left;
   transition: all 0.15s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px rgba(0,45,114,0.04);
+}
+
+.checklist-item:hover {
+  border-color: #005A9C;
 }
 
 .checklist-item.checked {
-  background: #f0faf4;
-  border-color: #a8e6c0;
+  background: #eef8f3;
+  border-color: #a8d8bb;
 }
 
-.checklist-icon {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
+.checklist-icon { font-size: 1.2rem; flex-shrink: 0; }
 
 .checklist-label {
   flex: 1;
@@ -599,17 +591,17 @@
 
 .checklist-item.checked .checklist-label {
   text-decoration: line-through;
-  color: #aaa;
+  color: #a5acaf;
 }
 
 .checklist-check {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #27ae60;
+  background: #005A9C;
   color: #fff;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -618,23 +610,23 @@
   transition: opacity 0.15s;
 }
 
-.checklist-item.checked .checklist-check {
-  opacity: 1;
-}
+.checklist-item.checked .checklist-check { opacity: 1; }
 
-/* Warning signs */
+/* Warning signs — Dodgers red */
 .warning-signs-card {
   background: #fff5f5;
   border-radius: 14px;
   padding: 1.1rem 1.25rem;
-  border-left: 4px solid #e74c3c;
+  border-left: 4px solid #EF3E42;
 }
 
 .warning-signs-card h4 {
-  font-size: 0.88rem;
-  font-weight: 800;
+  font-size: 0.86rem;
+  font-weight: 900;
   color: #c0392b;
   margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .warning-list {
@@ -650,35 +642,33 @@
   line-height: 1.5;
 }
 
-.warning-list li::marker {
-  color: #e74c3c;
-}
+.warning-list li::marker { color: #EF3E42; }
 
-/* Sleep card */
+/* Sleep card — Dodger blue */
 .sleep-card {
-  background: linear-gradient(135deg, #e8f4fd, #cce5f7);
+  background: linear-gradient(135deg, #eef3fb, #dae6f5);
   border-radius: 14px;
   padding: 1.1rem 1.25rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  border-left: 4px solid #005A9C;
 }
 
-.sleep-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
+.sleep-icon { font-size: 2rem; flex-shrink: 0; }
 
 .sleep-card h4 {
   font-size: 0.95rem;
-  font-weight: 800;
-  color: #1a3a6e;
+  font-weight: 900;
+  color: #002D72;
   margin: 0 0 0.35rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .sleep-card p {
   font-size: 0.85rem;
-  color: #2c5282;
+  color: #2a4a7f;
   line-height: 1.6;
   margin: 0;
 }
