@@ -1,0 +1,66 @@
+/* Progress Tracker — Dodgers Theme */
+.progress-page { display: flex; flex-direction: column; gap: 1rem; animation: fadeIn .3s ease; }
+.progress-header h2 { font-size: 1.6rem; font-weight: 900; color: #002D72; margin: 0 0 .2rem; text-transform: uppercase; letter-spacing: .02em; }
+.progress-header p { color: #5a6a8a; font-size: .88rem; margin: 0; }
+
+.progress-tabs { display: flex; gap: .4rem; background: #e2e8f0; border-radius: 12px; padding: 4px; }
+.progress-tab { flex: 1; padding: .55rem .5rem; border: none; border-radius: 9px; font-size: .82rem; font-weight: 700; cursor: pointer; background: transparent; color: #5a6a8a; transition: all .15s; text-transform: uppercase; letter-spacing: .04em; }
+.progress-tab.active { background: #fff; color: #002D72; box-shadow: 0 1px 6px rgba(0,45,114,.14); }
+
+/* Log session */
+.log-section { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; }
+.log-date-row { display: flex; align-items: center; gap: 1rem; background: #fff; border-radius: 12px; padding: .85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,45,114,.05); }
+.log-date-row label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #a5acaf; white-space: nowrap; }
+.log-date-input { border: 1.5px solid #e2e8f0; border-radius: 8px; padding: .4rem .75rem; font-size: .9rem; font-weight: 700; color: #002D72; outline: none; flex: 1; }
+
+.skill-category-group { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,45,114,.05); border-top: 4px solid #002D72; }
+.skill-category-label { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #a5acaf; padding: .75rem 1.1rem .4rem; }
+.skill-row { display: flex; align-items: center; gap: .75rem; padding: .65rem 1.1rem; border-bottom: 1px solid #f2f5f9; flex-wrap: wrap; }
+.skill-row:last-child { border-bottom: none; }
+.skill-row-label { display: flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 600; color: #333; min-width: 180px; flex-shrink: 0; }
+.skill-icon { font-size: 1.1rem; }
+
+/* Stars */
+.star-rating { display: flex; align-items: center; gap: .2rem; flex-wrap: wrap; }
+.star { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #dde3ef; transition: color .12s; padding: 0; line-height: 1; }
+.star.filled { color: #C4A44A; }
+.star:hover { color: #e8c05a; }
+.star-label { font-size: .72rem; color: #8a9ab5; font-weight: 600; margin-left: .35rem; white-space: nowrap; }
+
+/* Notes */
+.log-notes-wrap { display: flex; flex-direction: column; gap: .4rem; }
+.log-notes-wrap label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #a5acaf; }
+.log-notes { border: 1.5px solid #e2e8f0; border-radius: 10px; padding: .75rem; font-size: .9rem; color: #333; outline: none; resize: vertical; min-height: 80px; font-family: inherit; transition: border-color .15s; }
+.log-notes:focus { border-color: #005A9C; box-shadow: 0 0 0 3px rgba(0,90,156,.1); }
+
+.log-save-btn { padding: .7rem 1.5rem; background: #002D72; color: #fff; border: none; border-radius: 10px; font-size: .9rem; font-weight: 800; cursor: pointer; align-self: flex-start; text-transform: uppercase; letter-spacing: .04em; transition: background .14s; }
+.log-save-btn:hover:not(:disabled) { background: #001a4d; }
+.log-save-btn:disabled { background: #cdd5e0; cursor: not-allowed; }
+.log-hint { font-size: .78rem; color: #a5acaf; margin: 0; }
+
+/* Overview */
+.overview-section { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; }
+.overview-empty { display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: 2.5rem; text-align: center; color: #a5acaf; }
+.overview-empty span { font-size: 2.5rem; }
+.overview-empty p { font-size: .9rem; }
+.overview-sub { font-size: .82rem; color: #8a9ab5; margin: 0; }
+.overview-category { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,45,114,.05); border-top: 4px solid #005A9C; }
+.overview-cat-label { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #a5acaf; padding: .75rem 1.1rem .35rem; }
+.overview-row { display: flex; align-items: center; gap: .75rem; padding: .6rem 1.1rem; border-bottom: 1px solid #f2f5f9; }
+.overview-row:last-child { border-bottom: none; }
+.overview-icon { font-size: 1.1rem; flex-shrink: 0; }
+.overview-skill-name { font-size: .82rem; font-weight: 600; color: #333; min-width: 150px; flex-shrink: 0; }
+.overview-bar-track { flex: 1; height: 8px; background: #e2e8f0; border-radius: 99px; overflow: hidden; }
+.overview-bar-fill { height: 100%; background: linear-gradient(90deg,#005A9C,#C4A44A); border-radius: 99px; transition: width .4s ease; }
+.overview-stars { font-size: .9rem; color: #C4A44A; min-width: 70px; text-align: right; flex-shrink: 0; }
+
+/* History */
+.history-section { display: flex; flex-direction: column; gap: .85rem; max-width: 700px; }
+.history-session { background: #fff; border-radius: 14px; padding: 1.1rem 1.25rem; box-shadow: 0 2px 8px rgba(0,45,114,.05); border-top: 4px solid #C4A44A; }
+.history-session-date { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #C4A44A; margin-bottom: .65rem; }
+.history-skills-grid { display: flex; flex-wrap: wrap; gap: .4rem; }
+.history-skill-chip { display: flex; align-items: center; gap: .35rem; background: #eef3fb; border-radius: 8px; padding: .3rem .65rem; font-size: .78rem; color: #002D72; font-weight: 600; }
+.hchip-stars { color: #C4A44A; font-size: .75rem; }
+.history-notes { margin-top: .65rem; font-size: .82rem; color: #5a6a8a; line-height: 1.5; border-top: 1px solid #f0f4f8; padding-top: .55rem; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }

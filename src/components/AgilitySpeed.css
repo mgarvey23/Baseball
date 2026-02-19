@@ -1,0 +1,79 @@
+/* Agility & Speed — Dodgers Theme */
+.agility-page { display: flex; flex-direction: column; gap: 1rem; animation: fadeIn .3s ease; }
+.agility-header h2 { font-size: 1.6rem; font-weight: 900; color: #002D72; margin: 0 0 .2rem; text-transform: uppercase; letter-spacing: .02em; }
+.agility-header p { color: #5a6a8a; font-size: .88rem; margin: 0; }
+
+.agility-tabs { display: flex; gap: .4rem; background: #e2e8f0; border-radius: 12px; padding: 4px; }
+.agility-tab { flex: 1; padding: .55rem .5rem; border: none; border-radius: 9px; font-size: .82rem; font-weight: 700; cursor: pointer; background: transparent; color: #5a6a8a; transition: all .15s; text-transform: uppercase; letter-spacing: .04em; }
+.agility-tab.active { background: #fff; color: #002D72; box-shadow: 0 1px 6px rgba(0,45,114,.14); }
+
+/* Program selector */
+.program-selector { display: flex; gap: .5rem; flex-wrap: wrap; }
+.prog-btn { display: flex; flex-direction: column; align-items: flex-start; padding: .6rem 1rem; border-radius: 12px; border: 1.5px solid #e2e8f0; background: #fff; cursor: pointer; transition: all .14s; min-width: 110px; }
+.prog-btn:hover { border-color: #005A9C; }
+.prog-btn.active { background: #002D72; border-color: #002D72; }
+.prog-week { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #a5acaf; }
+.prog-btn.active .prog-week { color: #C4A44A; }
+.prog-title { font-size: .9rem; font-weight: 800; color: #002D72; }
+.prog-btn.active .prog-title { color: #fff; }
+
+/* Program intro */
+.program-intro { background: #fff; border-radius: 14px; padding: 1rem 1.25rem; border-top: 4px solid #002D72; box-shadow: 0 2px 8px rgba(0,45,114,.05); }
+.program-intro h3 { font-size: .95rem; font-weight: 900; color: #002D72; margin: 0 0 .3rem; text-transform: uppercase; letter-spacing: .02em; }
+.program-intro p { font-size: .85rem; color: #5a6a8a; margin: 0; line-height: 1.6; }
+
+/* Drill cards */
+.drill-cards { display: flex; flex-direction: column; gap: .6rem; max-width: 700px; }
+.agility-drill-card { background: #fff; border-radius: 14px; overflow: hidden; border: 1.5px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,45,114,.04); transition: border-color .14s; }
+.agility-drill-card.open { border-color: #005A9C; }
+
+.agility-drill-header { width: 100%; background: transparent; border: none; padding: 1rem 1.1rem; display: flex; align-items: center; gap: .75rem; cursor: pointer; text-align: left; transition: background .12s; }
+.agility-drill-header:hover { background: #f8fafc; }
+.agility-drill-icon { font-size: 1.4rem; flex-shrink: 0; }
+.agility-drill-info { flex: 1; }
+.agility-drill-name { font-size: .92rem; font-weight: 800; color: #002D72; }
+.agility-drill-meta { font-size: .75rem; color: #8a9ab5; margin-top: 2px; }
+.agility-chevron { font-size: .68rem; color: #a5acaf; }
+
+.agility-drill-body { padding: 0 1.1rem 1.1rem; border-top: 1px solid #f0f4f8; display: flex; flex-direction: column; gap: .75rem; }
+.agility-setup { font-size: .84rem; color: #5a6a8a; padding-top: .75rem; }
+.agility-setup strong { color: #002D72; }
+.agility-steps { padding-left: 1.2rem; display: flex; flex-direction: column; gap: .5rem; }
+.agility-steps li { font-size: .88rem; color: #333; line-height: 1.5; }
+.agility-steps li::marker { color: #005A9C; font-weight: 700; }
+.agility-cue { background: #f0f4fb; border-left: 3px solid #005A9C; border-radius: 0 8px 8px 0; padding: .5rem .85rem; font-size: .88rem; color: #002D72; font-style: italic; font-weight: 600; }
+.agility-coach-tip { background: linear-gradient(135deg,#fdf6e3,#f7e9b8); border-radius: 12px; padding: .75rem 1rem; border-left: 4px solid #C4A44A; }
+.coach-tip-label { display: block; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #8a6d1a; margin-bottom: .3rem; }
+.agility-coach-tip p { font-size: .85rem; color: #333; margin: 0; line-height: 1.55; }
+
+/* Stopwatch */
+.stopwatch { background: #f8fafc; border-radius: 12px; padding: 1rem; border: 1.5px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+.stopwatch-display { font-size: 2.8rem; font-weight: 900; color: #002D72; font-variant-numeric: tabular-nums; }
+.stopwatch-display span { font-size: 1.2rem; opacity: .5; }
+.stopwatch-best { font-size: .78rem; color: #8a9ab5; font-weight: 600; }
+.stopwatch-btns { display: flex; gap: .5rem; }
+.sw-btn { padding: .5rem 1.1rem; border-radius: 8px; border: none; font-size: .85rem; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: .04em; }
+.sw-btn.start { background: #002D72; color: #fff; }
+.sw-btn.stop  { background: #EF3E42; color: #fff; }
+.sw-btn.save  { background: #005A9C; color: #fff; }
+.sw-btn.reset { background: #f0f4f8; color: #5a6a8a; }
+
+/* Speed tips */
+.speed-tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1rem; }
+.speed-tip-card { background: #fff; border-radius: 14px; padding: 1.25rem; display: flex; align-items: flex-start; gap: .85rem; box-shadow: 0 2px 8px rgba(0,45,114,.06); border-top: 4px solid #005A9C; }
+.speed-tip-icon { font-size: 1.6rem; flex-shrink: 0; }
+.speed-tip-card p { font-size: .88rem; color: #333; margin: 0; line-height: 1.6; }
+
+/* My Times */
+.times-section { display: flex; flex-direction: column; gap: 1rem; max-width: 600px; }
+.times-empty { display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: 2rem; text-align: center; color: #a5acaf; font-size: .9rem; }
+.times-empty span { font-size: 2rem; }
+.times-card { background: #fff; border-radius: 14px; padding: 1.1rem 1.25rem; box-shadow: 0 2px 8px rgba(0,45,114,.06); }
+.times-card h4 { font-size: .88rem; font-weight: 800; color: #002D72; margin: 0 0 .3rem; }
+.times-best { font-size: .8rem; color: #5a6a8a; margin-bottom: .6rem; }
+.times-best strong { color: #005A9C; }
+.times-list { display: flex; flex-direction: column; gap: .35rem; }
+.time-entry { display: flex; justify-content: space-between; font-size: .82rem; padding: .35rem .6rem; border-radius: 8px; background: #f8fafc; color: #5a6a8a; }
+.time-entry.best { background: #eef3fb; color: #002D72; font-weight: 700; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
