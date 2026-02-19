@@ -1,0 +1,308 @@
+/* ===========================
+   Baseball Field Page
+   =========================== */
+
+.field-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.field-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.25rem 0;
+}
+
+.field-header p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Layout: SVG left, panel right */
+.field-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 900px) {
+  .field-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   SVG Wrapper
+   =========================== */
+
+.field-svg-wrapper {
+  background: #1a3a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.field-svg {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   Info Panel
+   =========================== */
+
+.field-info-panel {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  overflow-y: auto;
+  padding: 1.25rem;
+  position: relative;
+}
+
+/* Placeholder state */
+.field-info-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+}
+
+.field-info-placeholder h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a2e;
+}
+
+.field-info-placeholder p {
+  color: #666;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* Position list chips */
+.positions-list {
+  width: 100%;
+  text-align: left;
+  margin-top: 0.75rem;
+}
+
+.positions-list h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin: 0 0 0.5rem 0;
+}
+
+.position-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid currentColor;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  margin-bottom: 0.35rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background 0.15s;
+  text-align: left;
+}
+
+.position-chip:hover {
+  background: currentColor;
+  color: white !important;
+}
+
+.position-chip:hover .chip-abbr,
+.position-chip:hover .chip-name,
+.position-chip:hover .chip-num {
+  color: white;
+}
+
+.chip-num {
+  font-size: 0.72rem;
+  opacity: 0.7;
+  min-width: 20px;
+}
+
+.chip-abbr {
+  font-family: monospace;
+  font-weight: 700;
+  min-width: 28px;
+}
+
+.chip-name {
+  color: #333;
+  font-weight: 500;
+}
+
+.base-chip {
+  color: #5c6bc0;
+  border-color: #5c6bc0;
+}
+
+/* ===========================
+   Info Card (selected state)
+   =========================== */
+
+.field-info-card {
+  position: relative;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.info-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.info-close:hover {
+  background: #e0e0e0;
+}
+
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 12px;
+  padding: 0.4rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-badge.base-badge {
+  background: #e8eaf6;
+}
+
+.info-num {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+}
+
+.info-abbr {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: white;
+  font-family: monospace;
+}
+
+.info-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.5rem 0;
+}
+
+.info-description {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+/* Key skills */
+.info-section h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin: 0 0 0.5rem 0;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #333;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+}
+
+.skills-list li::before {
+  content: '✓';
+  color: #27ae60;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Fun fact */
+.info-fun-fact {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #f39c12;
+}
+
+.fun-fact-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e67e22;
+  margin-bottom: 0.35rem;
+}
+
+.info-fun-fact p {
+  font-size: 0.88rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
