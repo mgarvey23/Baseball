@@ -1,0 +1,689 @@
+/* ===========================
+   Arm Health Page
+   =========================== */
+
+.arm-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.arm-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.2rem 0;
+}
+
+.arm-header p {
+  color: #666;
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* Tabs */
+.arm-tabs {
+  display: flex;
+  gap: 0.4rem;
+  background: #e8edf5;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.arm-tab {
+  flex: 1;
+  padding: 0.55rem 0.5rem;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #666;
+  transition: all 0.15s;
+}
+
+.arm-tab.active {
+  background: #fff;
+  color: #1a1a2e;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+/* ===========================
+   Pitch Tracker
+   =========================== */
+
+.tracker-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 560px;
+}
+
+.pitch-gauge-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gauge-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gauge-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+}
+
+.gauge-date {
+  font-size: 0.78rem;
+  color: #bbb;
+}
+
+.gauge-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.gauge-max {
+  font-size: 1.4rem;
+  opacity: 0.4;
+  font-weight: 600;
+}
+
+.gauge-bar-track {
+  height: 14px;
+  background: #f0f0f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.gauge-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+.gauge-zones {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Rest status */
+.rest-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  border: 2px solid;
+  transition: border-color 0.3s;
+}
+
+.rest-status-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.rest-status-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.rest-status-sub {
+  font-size: 0.78rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Controls */
+.pitch-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.increment-select {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.inc-btn {
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.inc-btn:hover {
+  border-color: #1a3a6e;
+  color: #1a3a6e;
+}
+
+.inc-btn.active {
+  background: #1a3a6e;
+  border-color: #1a3a6e;
+  color: #fff;
+}
+
+.pitch-btn-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn-log-pitch {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  background: #1a3a6e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-log-pitch:hover:not(:disabled) {
+  background: #142d58;
+}
+
+.btn-log-pitch:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  padding: 0.7rem 1rem;
+  background: #fff;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* History */
+.pitch-history {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.pitch-history h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin: 0 0 0.75rem 0;
+}
+
+.history-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.history-date {
+  font-size: 0.78rem;
+  color: #888;
+  min-width: 80px;
+}
+
+.history-bar-track {
+  flex: 1;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.history-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.3s;
+}
+
+.history-count {
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: right;
+}
+
+/* Pitch rule note */
+.pitch-rule-note {
+  background: #f0f4ff;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: #444;
+  line-height: 1.55;
+  border-left: 3px solid #1a3a6e;
+}
+
+/* ===========================
+   Arm Strengthening
+   =========================== */
+
+.strength-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+}
+
+.strength-intro {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.strength-intro-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.strength-intro h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.35rem 0;
+}
+
+.strength-intro p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Phase cards */
+.phase-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1.5px solid #eee;
+  transition: border-color 0.15s;
+}
+
+.phase-card.open {
+  border-color: #1a3a6e;
+}
+
+.phase-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.phase-header:hover {
+  background: #fafafa;
+}
+
+.phase-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1a3a6e;
+  background: #e8f0ff;
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+.phase-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.phase-subtitle {
+  font-size: 0.78rem;
+  color: #999;
+  margin-top: 1px;
+}
+
+.phase-chevron {
+  font-size: 0.7rem;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.phase-body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.phase-desc {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.75rem 0 0;
+}
+
+.phase-meta-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.phase-meta-chip {
+  font-size: 0.78rem;
+  background: #f0f4ff;
+  color: #1a3a6e;
+  border-radius: 8px;
+  padding: 0.3rem 0.7rem;
+  font-weight: 600;
+}
+
+/* Exercises */
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.exercise-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 0.85rem;
+  border: 1.5px solid #eee;
+  transition: all 0.15s;
+}
+
+.exercise-card.done {
+  background: #f0faf4;
+  border-color: #a8e6c0;
+  opacity: 0.7;
+}
+
+.exercise-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #27ae60;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.12s;
+}
+
+.exercise-card.done .exercise-check {
+  background: #27ae60;
+  border-color: #27ae60;
+  color: #fff;
+}
+
+.exercise-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.exercise-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.exercise-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+
+.exercise-sets {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1a3a6e;
+  margin-bottom: 0.35rem;
+}
+
+.exercise-cue {
+  font-size: 0.82rem;
+  color: #555;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+
+.exercise-purpose {
+  font-size: 0.75rem;
+  color: #999;
+  line-height: 1.4;
+}
+
+.clear-phase {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* Strength warning */
+.strength-warning {
+  background: #fff8e1;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: #444;
+  line-height: 1.55;
+  border-left: 4px solid #f39c12;
+}
+
+/* ===========================
+   Recovery
+   =========================== */
+
+.recovery-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.recovery-intro h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.35rem 0;
+}
+
+.recovery-intro p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Checklist */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #fff;
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.checklist-item.checked {
+  background: #f0faf4;
+  border-color: #a8e6c0;
+}
+
+.checklist-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.checklist-label {
+  flex: 1;
+  font-size: 0.88rem;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.checklist-item.checked .checklist-label {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.checklist-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #27ae60;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.checklist-item.checked .checklist-check {
+  opacity: 1;
+}
+
+/* Warning signs */
+.warning-signs-card {
+  background: #fff5f5;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  border-left: 4px solid #e74c3c;
+}
+
+.warning-signs-card h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #c0392b;
+  margin: 0 0 0.75rem 0;
+}
+
+.warning-list {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.warning-list li {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.warning-list li::marker {
+  color: #e74c3c;
+}
+
+/* Sleep card */
+.sleep-card {
+  background: linear-gradient(135deg, #e8f4fd, #cce5f7);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.sleep-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.sleep-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1a3a6e;
+  margin: 0 0 0.35rem 0;
+}
+
+.sleep-card p {
+  font-size: 0.85rem;
+  color: #2c5282;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

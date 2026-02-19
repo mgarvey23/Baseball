@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import BaseballField from './components/BaseballField';
+import DrillLibrary from './components/DrillLibrary';
+import PracticePlanner from './components/PracticePlanner';
+import ArmHealth from './components/ArmHealth';
 import './App.css';
 
 const NAV_ITEMS = [
-  { id: 'field',    icon: '🏟️',  label: 'The Field',        component: BaseballField },
-  { id: 'drills',   icon: '⚾',  label: 'Drill Library',    component: ComingSoon },
-  { id: 'practice', icon: '📋',  label: 'Practice Planner', component: ComingSoon },
-  { id: 'agility',  icon: '⚡',  label: 'Agility & Speed',  component: ComingSoon },
-  { id: 'mental',   icon: '🧠',  label: 'Mental Skills',    component: ComingSoon },
-  { id: 'arm',      icon: '💪',  label: 'Arm Health',       component: ComingSoon },
+  { id: 'field',    icon: '🏟️',  label: 'The Field',         component: BaseballField,  live: true },
+  { id: 'drills',   icon: '⚾',  label: 'Drill Library',     component: DrillLibrary,   live: true },
+  { id: 'practice', icon: '📋',  label: 'Practice Planner',  component: PracticePlanner, live: true },
+  { id: 'arm',      icon: '💪',  label: 'Arm Health',        component: ArmHealth,      live: true },
+  { id: 'agility',  icon: '⚡',  label: 'Agility & Speed',   component: ComingSoon },
+  { id: 'mental',   icon: '🧠',  label: 'Mental Skills',     component: ComingSoon },
   { id: 'rules',    icon: '📖',  label: 'Rules & Knowledge', component: ComingSoon },
-  { id: 'progress', icon: '📈',  label: 'Progress Tracker', component: ComingSoon },
+  { id: 'progress', icon: '📈',  label: 'Progress Tracker',  component: ComingSoon },
 ];
 
 function ComingSoon({ label }) {
@@ -57,7 +60,7 @@ export default function App() {
             >
               <span className="nav-icon">{item.icon}</span>
               <span className="nav-label-text">{item.label}</span>
-              {item.id !== 'field' && (
+              {!item.live && (
                 <span className="nav-badge">Soon</span>
               )}
             </button>
