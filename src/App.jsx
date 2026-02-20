@@ -20,16 +20,6 @@ const NAV_ITEMS = [
   { id: 'progress', icon: '📈',  label: 'Progress Tracker',  component: ProgressTracker, live: true },
 ];
 
-function ComingSoon({ label }) {
-  return (
-    <div className="coming-soon">
-      <span className="coming-soon-icon">🚧</span>
-      <h2>{label}</h2>
-      <p>This feature is coming soon. Build it next!</p>
-    </div>
-  );
-}
-
 export default function App() {
   const [activeId, setActiveId] = useState('field');
   const [sidebarOpen, setSidebarOpen] = useState(false);
