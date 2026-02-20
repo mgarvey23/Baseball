@@ -3,7 +3,7 @@
 
 export const RULE_CATEGORIES = [
   { id: 'basics',    label: 'The Basics',    icon: '⚾' },
-  { id: 'batting',   label: 'Batting',       icon: '🏏' },
+  { id: 'batting',   label: 'Batting',       icon: '🥎' },
   { id: 'fielding',  label: 'Fielding',      icon: '🧤' },
   { id: 'running',   label: 'Baserunning',   icon: '🏃' },
   { id: 'scoring',   label: 'Scoring',       icon: '🏆' },
@@ -187,7 +187,7 @@ export const RULES = [
     category: 'glossary',
     question: 'At-bat',
     answer: 'One batter\'s turn at the plate. An at-bat ends when the batter gets a hit, makes an out, walks, or gets hit by a pitch.',
-    emoji: '🏏',
+    emoji: '🥎',
     level: 1,
   },
   {

@@ -37,10 +37,10 @@ export default function App() {
       {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <span className="sidebar-logo">⚾</span>
+          <div className="sidebar-logo">LA</div>
           <div>
-            <div className="sidebar-title">Baseball Coach</div>
-            <div className="sidebar-sub">Youth Development App</div>
+            <div className="sidebar-title">Dodgers Coach</div>
+            <div className="sidebar-sub">Youth Development · Age 7</div>
           </div>
         </div>
 

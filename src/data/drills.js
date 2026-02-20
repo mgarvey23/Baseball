@@ -6,7 +6,7 @@
 
 export const CATEGORIES = [
   { id: 'all',         label: 'All Drills',   icon: '⚾' },
-  { id: 'hitting',     label: 'Hitting',       icon: '🏏' },
+  { id: 'hitting',     label: 'Hitting',       icon: '🥎' },
   { id: 'throwing',    label: 'Throwing',      icon: '💪' },
   { id: 'catching',    label: 'Catching',      icon: '🧤' },
   { id: 'fielding',    label: 'Fielding',      icon: '🌿' },

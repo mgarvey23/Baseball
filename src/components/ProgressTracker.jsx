@@ -4,7 +4,7 @@ import './ProgressTracker.css';
 const SKILLS = [
   { id: 'throwing',    label: 'Throwing Mechanics', icon: '💪', category: 'Fundamental' },
   { id: 'catching',    label: 'Catching',           icon: '🧤', category: 'Fundamental' },
-  { id: 'hitting',     label: 'Hitting / Contact',  icon: '🏏', category: 'Fundamental' },
+  { id: 'hitting',     label: 'Hitting / Contact',  icon: '🥎', category: 'Fundamental' },
   { id: 'fielding',    label: 'Fielding Grounders',  icon: '🌿', category: 'Fundamental' },
   { id: 'flyball',     label: 'Tracking Fly Balls',  icon: '☀️', category: 'Fundamental' },
   { id: 'baserunning', label: 'Baserunning IQ',      icon: '🏃', category: 'Game Sense' },
