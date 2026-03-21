@@ -7,12 +7,14 @@ import AgilitySpeed from './components/AgilitySpeed';
 import MentalSkills from './components/MentalSkills';
 import RulesKnowledge from './components/RulesKnowledge';
 import ProgressTracker from './components/ProgressTracker';
+import CatcherTraining from './components/CatcherTraining';
 import './App.css';
 
 const NAV_ITEMS = [
   { id: 'field',    icon: '🏟️',  label: 'The Field',         component: BaseballField,   live: true },
   { id: 'drills',   icon: '⚾',  label: 'Drill Library',     component: DrillLibrary,    live: true },
   { id: 'practice', icon: '📋',  label: 'Practice Planner',  component: PracticePlanner, live: true },
+  { id: 'catcher',  icon: '🥅',  label: 'Catcher Training',  component: CatcherTraining, live: true },
   { id: 'arm',      icon: '💪',  label: 'Arm Health',        component: ArmHealth,       live: true },
   { id: 'agility',  icon: '⚡',  label: 'Agility & Speed',   component: AgilitySpeed,    live: true },
   { id: 'mental',   icon: '🧠',  label: 'Mental Skills',     component: MentalSkills,    live: true },

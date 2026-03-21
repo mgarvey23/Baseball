@@ -1,0 +1,654 @@
+/* ===========================
+   Catcher Training — Dodgers Theme
+   =========================== */
+
+.catcher-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 760px;
+  animation: fadeInCatcher 0.3s ease;
+}
+
+@keyframes fadeInCatcher {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.catcher-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.catcher-header-icon { font-size: 2.8rem; line-height: 1; }
+
+.catcher-header h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0 0 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.catcher-header p { color: #5a6a8a; font-size: 0.88rem; margin: 0; }
+
+/* Hero fact */
+.catcher-hero-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: linear-gradient(135deg, #eef3fb, #e0eaf9);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #002D72;
+  font-size: 0.88rem;
+  color: #1a2a4a;
+  line-height: 1.6;
+}
+
+.hero-fact-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* Tabs */
+.catcher-tabs {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  border: 1px solid #dde4f0;
+}
+
+.catcher-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 64px;
+  padding: 0.5rem 0.4rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #5a6a8a;
+}
+
+.catcher-tab:hover { background: #f0f4fc; color: #002D72; }
+
+.catcher-tab.active {
+  background: #002D72;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.28);
+}
+
+.ct-icon  { font-size: 1.2rem; line-height: 1; }
+.ct-label { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Section wrapper */
+.catcher-content { display: flex; flex-direction: column; gap: 1rem; }
+
+.section-intro h3 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.section-intro p { color: #5a6a8a; font-size: 0.88rem; margin: 0; }
+
+/* Shared tip/rule boxes */
+.catcher-rule-box, .catcher-tip-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.catcher-rule-box {
+  background: #fef2f2;
+  border-left: 4px solid #EF3E42;
+  color: #7f1d1d;
+}
+
+.catcher-tip-box {
+  background: #eef3fb;
+  border-left: 4px solid #005A9C;
+  color: #2a3f6e;
+}
+
+.rule-box-icon, .tip-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+/* ── GEAR TAB ─────────────────────────────────────────────── */
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .gear-grid { grid-template-columns: 1fr; }
+}
+
+.gear-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  border-top: 4px solid #002D72;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gear-card-icon { font-size: 2rem; line-height: 1; }
+
+.gear-card-name {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.gear-card-desc { font-size: 0.84rem; color: #444; line-height: 1.55; margin: 0; }
+
+.gear-tips { display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.25rem; }
+
+.gear-tip {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #5a6a8a;
+  line-height: 1.5;
+}
+
+.gear-tip-dot { color: #005A9C; font-weight: 900; flex-shrink: 0; }
+
+/* ── STANCE TAB ───────────────────────────────────────────── */
+.stance-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+.stance-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  border-left: 5px solid #002D72;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stance-card-top { display: flex; align-items: flex-start; gap: 0.75rem; }
+.stance-icon { font-size: 2rem; line-height: 1; flex-shrink: 0; }
+
+.stance-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0 0 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.stance-when {
+  font-size: 0.78rem;
+  color: #8a9ab5;
+  font-style: italic;
+}
+
+.stance-steps {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.stance-steps li {
+  font-size: 0.875rem;
+  color: #333;
+  line-height: 1.55;
+}
+
+.stance-cue {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f0f4fc;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.84rem;
+  color: #1a2a4a;
+  font-style: italic;
+}
+
+.cue-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #005A9C;
+  font-style: normal;
+  flex-shrink: 0;
+}
+
+/* ── RECEIVING TAB ────────────────────────────────────────── */
+.receiving-steps { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.receiving-card {
+  display: flex;
+  gap: 0.85rem;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  align-items: flex-start;
+}
+
+.receiving-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #002D72;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.receiving-body { flex: 1; display: flex; flex-direction: column; gap: 0.45rem; }
+
+.receiving-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.receiving-icon { font-size: 1.2rem; }
+
+.receiving-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.receiving-detail { font-size: 0.875rem; color: #333; line-height: 1.6; margin: 0; }
+
+.receiving-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #2a3f6e;
+  background: #eef3fb;
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+}
+
+.rec-tip-label {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #005A9C;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── BLOCKING TAB ────────────────────────────────────────── */
+.blocking-rule-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, #002D72, #005A9C);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  color: #fff;
+}
+
+.blocking-rule-icon { font-size: 2rem; flex-shrink: 0; }
+.blocking-rule-card strong { font-size: 0.95rem; display: block; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.blocking-rule-card p { font-size: 0.875rem; margin: 0; opacity: 0.9; line-height: 1.55; }
+
+.blocking-steps { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.blocking-step {
+  display: flex;
+  gap: 0.85rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 2px 6px rgba(0,45,114,0.06);
+  align-items: flex-start;
+}
+
+.blocking-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #EF3E42;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.blocking-step-body { flex: 1; display: flex; flex-direction: column; gap: 0.3rem; }
+
+.blocking-step-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.blocking-step-title-row h4 {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.blocking-step-body p { font-size: 0.875rem; color: #333; line-height: 1.55; margin: 0; }
+
+/* ── THROWING TAB ────────────────────────────────────────── */
+.throwing-steps { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.throwing-card {
+  display: flex;
+  gap: 0.85rem;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  align-items: flex-start;
+}
+
+.throwing-card-icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+.throwing-card-body { flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
+
+.throwing-card-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.throwing-card-detail { font-size: 0.875rem; color: #333; line-height: 1.6; margin: 0; }
+
+.throwing-cue {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #1a2a4a;
+  font-style: italic;
+}
+
+.throw-cue-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #C4A44A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-style: normal;
+  flex-shrink: 0;
+}
+
+.pop-time-chart {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  border-top: 4px solid #C4A44A;
+}
+
+.pop-chart-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a5acaf;
+  margin-bottom: 0.75rem;
+}
+
+.pop-chart-rows { display: flex; flex-direction: column; gap: 0.45rem; }
+
+.pop-chart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f2f5f9;
+}
+.pop-chart-row:last-child { border-bottom: none; }
+
+.pop-time { font-weight: 700; color: #002D72; }
+.pop-grade { font-weight: 800; }
+
+/* ── FIELD IQ TAB ────────────────────────────────────────── */
+.field-iq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .field-iq-grid { grid-template-columns: 1fr; }
+}
+
+.field-iq-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border-top: 3px solid #005A9C;
+}
+
+.field-iq-icon { font-size: 1.8rem; line-height: 1; }
+
+.field-iq-title {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #002D72;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.field-iq-detail { font-size: 0.84rem; color: #444; line-height: 1.6; margin: 0; }
+
+/* ── DRILLS TAB ──────────────────────────────────────────── */
+.catcher-drills-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.cd-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,45,114,0.07);
+  border-left: 4px solid #002D72;
+  transition: box-shadow 0.15s;
+}
+
+.cd-card.open { box-shadow: 0 4px 20px rgba(0,45,114,0.14); }
+
+.cd-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.cd-header:hover { background: #f8fafc; }
+
+.cd-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.cd-header-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+
+.cd-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #002D72;
+}
+
+.cd-meta { font-size: 0.72rem; color: #8a9ab5; }
+
+.cd-complete {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #16a34a;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  flex-shrink: 0;
+}
+
+.cd-chevron { font-size: 0.7rem; color: #8a9ab5; flex-shrink: 0; }
+
+.cd-body {
+  padding: 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid #f0f4fc;
+}
+
+.cd-equipment {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  padding-top: 0.85rem;
+}
+
+.cd-eq-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a5acaf;
+}
+
+.cd-eq-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f0f4fc;
+  color: #005A9C;
+  border-radius: 20px;
+  padding: 0.15rem 0.6rem;
+}
+
+.cd-steps-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a5acaf;
+  margin-bottom: 0.4rem;
+}
+
+.cd-steps { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.cd-step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.cd-step-row.checked { background: #f0fdf4; border-color: #86efac; }
+
+.cd-checkbox { accent-color: #16a34a; flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+
+.cd-step-text {
+  font-size: 0.855rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.cd-step-row.checked .cd-step-text { color: #16a34a; text-decoration: line-through; opacity: 0.75; }
+
+.cd-cue-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f0f4fc;
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.84rem;
+  color: #1a2a4a;
+  font-style: italic;
+}
+
+.cd-cue-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #005A9C;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-style: normal;
+  flex-shrink: 0;
+}
+
+.cd-parent-tip {
+  display: flex;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #fdf6e3, #f7e9b8);
+  border-radius: 10px;
+  padding: 0.75rem;
+  border-left: 3px solid #C4A44A;
+}
+
+.cd-parent-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.cd-parent-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8a6d1a;
+  margin-bottom: 0.25rem;
+}
+
+.cd-parent-tip p { font-size: 0.82rem; color: #444; line-height: 1.55; margin: 0; }
