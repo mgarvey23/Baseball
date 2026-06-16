@@ -20,7 +20,7 @@ function shuffle(arr) {
 
 export default function BaseballField() {
   const [mode, setMode]           = useState('explore'); // 'explore' | 'quiz'
-  const [quizFilter, setQuizFilter] = useState('all'); // 'all' | 'baserunning' | 'defense'
+  const [quizMode, setQuizMode]   = useState(null);      // null | 'baserunning' | 'defense'
 
   /* Explore state */
   const [selected, setSelected]   = useState(null);
@@ -36,20 +36,24 @@ export default function BaseballField() {
   const selectedPosition = selected ? POSITIONS[selected] : null;
 
   /* ── Start / restart quiz ─────────────────────────────────────── */
-  const startQuiz = useCallback((filter = quizFilter) => {
-    const pool = filter === 'all'
-      ? SCENARIOS
-      : SCENARIOS.filter(s => s.category === filter);
+  const startQuiz = useCallback((category) => {
+    const pool = SCENARIOS.filter(s => s.category === category);
     setQueue(shuffle(pool).slice(0, 10));
     setQIdx(0);
     setPicked(null);
     setScore(0);
     setQuizDone(false);
-  }, [quizFilter]);
+  }, []);
 
-  function handleFilterChange(f) {
-    setQuizFilter(f);
-    startQuiz(f);
+  function handleModeSelect(category) {
+    setQuizMode(category);
+    startQuiz(category);
+  }
+
+  function handleChangeMode() {
+    setQuizMode(null);
+    setQueue([]);
+    setQuizDone(false);
   }
 
   /* ── Quiz answer handling ─────────────────────────────────────── */
@@ -89,7 +93,9 @@ export default function BaseballField() {
         </button>
         <button className={`field-tab ${mode === 'quiz' ? 'active' : ''}`} onClick={() => {
           setMode('quiz');
-          if (queue.length === 0) startQuiz();
+          setQuizMode(null);
+          setQueue([]);
+          setQuizDone(false);
         }}>
           🎮 Situation Quiz
         </button>
@@ -271,18 +277,22 @@ export default function BaseballField() {
             )
           ) : (
             /* ── QUIZ MODE ── */
-            <QuizPanel
-              queue={queue}
-              qIdx={qIdx}
-              picked={picked}
-              score={score}
-              quizDone={quizDone}
-              quizFilter={quizFilter}
-              onPick={handlePick}
-              onNext={handleNext}
-              onFilterChange={handleFilterChange}
-              onRestart={() => startQuiz()}
-            />
+            quizMode === null ? (
+              <QuizModeSelector onSelect={handleModeSelect} />
+            ) : (
+              <QuizPanel
+                queue={queue}
+                qIdx={qIdx}
+                picked={picked}
+                score={score}
+                quizDone={quizDone}
+                quizMode={quizMode}
+                onPick={handlePick}
+                onNext={handleNext}
+                onRestart={() => startQuiz(quizMode)}
+                onChangeMode={handleChangeMode}
+              />
+            )
           )}
         </div>
       </div>
@@ -290,8 +300,37 @@ export default function BaseballField() {
   );
 }
 
+/* ── Quiz Mode Selector ────────────────────────────────────────────────── */
+function QuizModeSelector({ onSelect }) {
+  const brCount = SCENARIOS.filter(s => s.category === 'baserunning').length;
+  const defCount = SCENARIOS.filter(s => s.category === 'defense').length;
+  return (
+    <div className="quiz-mode-selector">
+      <div className="quiz-mode-header">
+        <div className="quiz-mode-icon">🎮</div>
+        <h3>Choose Your Quiz Mode</h3>
+        <p>Pick a category — 10 random questions each time!</p>
+      </div>
+      <div className="quiz-mode-cards">
+        <button className="quiz-mode-card offense" onClick={() => onSelect('baserunning')}>
+          <span className="qmc-icon">🏃</span>
+          <span className="qmc-title">Offense</span>
+          <span className="qmc-desc">Baserunning decisions — when to run, steal, tag up, and score</span>
+          <span className="qmc-count">{brCount} scenarios</span>
+        </button>
+        <button className="quiz-mode-card defense" onClick={() => onSelect('defense')}>
+          <span className="qmc-icon">🌿</span>
+          <span className="qmc-title">Defense</span>
+          <span className="qmc-desc">Fielding decisions — where to throw, who covers, how to defend</span>
+          <span className="qmc-count">{defCount} scenarios</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /* ── Quiz Panel ────────────────────────────────────────────────────────── */
-function QuizPanel({ queue, qIdx, picked, score, quizDone, quizFilter, onPick, onNext, onFilterChange, onRestart }) {
+function QuizPanel({ queue, qIdx, picked, score, quizDone, quizMode, onPick, onNext, onRestart, onChangeMode }) {
   if (quizDone) {
     const pct = Math.round((score / queue.length) * 100);
     const grade = pct >= 90 ? { label: 'All-Star! 🌟', color: '#C4A44A' }
@@ -302,14 +341,20 @@ function QuizPanel({ queue, qIdx, picked, score, quizDone, quizFilter, onPick, o
       <div className="quiz-done">
         <div className="quiz-done-icon">🏆</div>
         <h3 className="quiz-done-title">Quiz Complete!</h3>
+        <div className="quiz-done-mode-badge" data-mode={quizMode}>
+          {quizMode === 'baserunning' ? '🏃 Offense' : '🌿 Defense'}
+        </div>
         <div className="quiz-done-score">{score} / {queue.length}</div>
         <div className="quiz-done-grade" style={{ color: grade.color }}>{grade.label}</div>
         <p className="quiz-done-msg">
           {pct >= 70
-            ? 'Great baseball IQ! You know when to run and when to throw.'
+            ? 'Great baseball IQ! You know your stuff on the field.'
             : 'Keep studying the situations — you\'ll get it! Every pro had to learn these too.'}
         </p>
-        <button className="quiz-restart-btn" onClick={onRestart}>🔄 Play Again</button>
+        <div className="quiz-done-btns">
+          <button className="quiz-restart-btn" onClick={onRestart}>🔄 Play Again</button>
+          <button className="quiz-switch-btn" onClick={onChangeMode}>🔀 Switch Mode</button>
+        </div>
       </div>
     );
   }
@@ -322,12 +367,13 @@ function QuizPanel({ queue, qIdx, picked, score, quizDone, quizFilter, onPick, o
 
   return (
     <div className="quiz-panel">
-      {/* Filter + progress */}
+      {/* Mode badge + progress */}
       <div className="quiz-top-row">
-        <div className="quiz-filters">
-          {[['all', '⚾ All'], ['baserunning', '🏃 Running'], ['defense', '🌿 Defense']].map(([f, l]) => (
-            <button key={f} className={`quiz-filter-btn ${quizFilter === f ? 'active' : ''}`} onClick={() => onFilterChange(f)}>{l}</button>
-          ))}
+        <div className="quiz-mode-bar">
+          <span className={`quiz-active-mode-badge ${quizMode}`}>
+            {quizMode === 'baserunning' ? '🏃 Offense Quiz' : '🌿 Defense Quiz'}
+          </span>
+          <button className="quiz-change-mode-link" onClick={onChangeMode}>Change Mode</button>
         </div>
         <div className="quiz-progress-bar">
           <div className="quiz-progress-fill" style={{ width: `${((qIdx) / totalQ) * 100}%` }} />
